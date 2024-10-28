@@ -1,20 +1,24 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 //import logo from './logo.svg';
 import './App.css';
 import Main from './components/Main';
-
+import Register from './components/Register';
+import Login from './components/Login';
+//import Dashboard from './components/dashboard/Dashboard';
 
 
 
 function App() {
   const user = localStorage.getItem('token');
-  Navigate();
+  useNavigate();
 
   return (
     <div className="App">
+     {/* <Dashboard />*/}
       <Routes>
-        {use && <Route path='/' element={<Main />} />}
-        <Route path='/register' element={<Register />} />
+       {user && <Route path='/' element={<Main />} />}
+        <Route path='/register' element={<Register />} /> 
         <Route path='/login' element={<Login />} />
         <Route path='/' element={<Navigate to='/login' />} />
       </Routes>

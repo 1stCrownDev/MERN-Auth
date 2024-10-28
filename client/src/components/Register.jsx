@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import styles from './../styles.module.css';
+
+
+
 
 const Register = () => {
     const [data, setData] = useState({
@@ -41,7 +45,7 @@ const Register = () => {
 					<h1>Welcome Back</h1>
 					<Link to="/login">
 						<button type="button" className={styles.white_btn}>
-							Sing in
+							Login
 						</button>
 					</Link>
 				</div>
@@ -86,7 +90,7 @@ const Register = () => {
 						/>
 						{error && <div className={styles.error_msg}>{error}</div>}
 						<button type="submit" className={styles.green_btn}>
-							Sing Up
+							Sign Up
 						</button>
 					</form>
 				</div>
